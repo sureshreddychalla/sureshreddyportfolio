@@ -18,6 +18,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skils</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -49,18 +50,21 @@
         <div class="container">
             <h2>Education</h2>
             <h3>Bachelor of Science in Computer Science</h3>
-            <p>Gitam University | Graduated: 2024 | CGPA 7.7 </p>
-        </div>
-        <div class="container">
-            <h3>Board of Intermediate Education, Andhra Pradesh (BIEAP)</h3>
-            <p>Sri Chaitanya junior college | Year Of Passedout: 2020 | CGPA 9.0 </p>
-        </div>
-        <div class="container">
-            <h3>Board of Secondary Education, Andhra Pradesh (BSEAP)</h3>
-            <p>Z P High School | Year Of Passedout: 2018 | CGPA 8.0 </p>
+            <p>Gitam University | Graduated: 2024</p>
         </div>
     </section>
-
+    <!-- skills section -->
+     <section id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <h3>Python</h3>
+          <h3>Frontend Technologies (Html, CSS, JavaScript)</h3>
+          <h3>React js</h3>
+          <h3>Angular js</h3>
+          <h3>Django Framework</h3>
+          <h3>Futter flow</h3>  
+        </div>
+     </section>
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -93,10 +97,15 @@
                     <h3>Load Balancing in Cloud</h3>
                     <p>Established data centers and distributed loads evenly for optimization.</p>
                 </div>
+                <div class="card">
+                    <h3>Tasty Talks</h3>
+                    <p>deploy a complete responsive website based on screens Web browser, Mobile, Desktop, Laptop</p>
+                    <a href="https://sureshreddychalla.github.io/online-food-order/home.html" class="cta-btn">Visit the Website</a>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -125,9 +134,15 @@
     </footer>
 
     <script>
-        document.querySelector(".menu-toggle").addEventListener("click", function() {
-            document.querySelector("nav ul").classList.toggle("active");
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navMenu = document.querySelector("nav ul");
+
+            menuToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("active");
+            });
         });
+
     </script>
 </body>
 </html>
