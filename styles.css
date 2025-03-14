@@ -43,7 +43,7 @@ nav {
 nav .logo {
   font-size: 24px;
   font-weight: bold;
-  margin-left: -110px;
+  margin-left: 10px;
   opacity: 0;
   animation: fadeInLeft 0.8s ease-out forwards;
 }
@@ -99,7 +99,6 @@ nav ul li a:hover {
   border: none;
   color: white;
   padding: 10px;
-  margin-right: -110px;
   transition: transform 0.3s ease-in-out;
 }
 
