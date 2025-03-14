@@ -9,13 +9,10 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   background-color: #f4f4f4;
-}
-
-/* Smooth transition for all elements */
-* {
   transition: all 0.3s ease-in-out;
 }
 
+/* Container */
 .container {
   width: 80%;
   margin: 0 auto;
@@ -28,6 +25,11 @@ header {
   color: white;
   padding: 15px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;  /* Keep header fixed */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure header is above everything */
 }
 
 /* Navbar */
@@ -36,10 +38,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  position: relative;
 }
 
-/* Adjust logo position */
+/* Logo */
 nav .logo {
   font-size: 24px;
   font-weight: bold;
@@ -48,35 +49,33 @@ nav .logo {
   animation: fadeInLeft 0.8s ease-out forwards;
 }
 
-
 /* Navigation Menu */
 nav ul {
   list-style-type: none;
   display: none;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  top: 70px; /* Increased from 60px to prevent overlap */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(51, 51, 51, 0.9); /* Make background slightly transparent */
+  position: fixed; /* Keeps menu above body */
+  top: 60px; /* Adjust height so it doesn’t overlap header */
+  left: 0;
   width: 100%;
-  padding: 10px;
-  border-radius: 5px;
+  height: 100vh; /* Full screen height */
+  background: rgba(51, 51, 51, 0.95); /* Slight transparency */
+  padding: 20px;
   opacity: 0;
-  z-index: 100; /* Ensures menu appears above other content */
+  z-index: 1000; /* Ensures it’s above the content */
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  overflow-y: auto; /* Allows scrolling if needed */
 }
 
-
-/* Show menu with animation */
+/* Show menu when active */
 nav ul.active {
   display: flex;
-  flex-direction: column;
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Menu items */
 nav ul li {
   margin: 15px 0;
 }
@@ -109,10 +108,17 @@ nav ul li a:hover {
   transform: rotate(90deg);
 }
 
-/* Ensure vertical menu on all screen sizes */
+/* Prevent body scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Responsive Styles */
 @media (min-width: 769px) {
   nav ul {
     width: 250px;
+    height: auto; /* Only apply full height for mobile */
+    position: relative; /* Normal position for larger screens */
   }
 }
 
